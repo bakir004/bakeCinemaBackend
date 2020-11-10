@@ -7,8 +7,8 @@ import com.backend.cinema.Repos.MovieRepo;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-@CrossOrigin(origins = "*")
 public class MovieController {
     private MovieRepo movieRepo;
 
@@ -32,6 +32,7 @@ public class MovieController {
 
     @PostMapping("/movie")
     public Movie createMovie(@RequestBody Movie movie) {
+        System.out.println(movie);
         this.movieRepo.insert(movie);
         return movie;
     }

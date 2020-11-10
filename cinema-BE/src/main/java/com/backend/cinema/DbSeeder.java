@@ -22,9 +22,10 @@ public class DbSeeder implements CommandLineRunner {
     public void run(String... strings) throws Exception {
         Movie breakingBad = new Movie(
                 "Breaking Bad",
-                "2008–2013",
+                "2013",
                 "TV-14",
                 "2008-01-20",
+                "https://i.pinimg.com/originals/e3/69/70/e369709a2c570997787fb22d8294f626.gif",
                 49,
                 new ArrayList<String>(Arrays.asList("Crime", "Drama", "Thriller")),
                 "Vince Gilligan",
@@ -35,20 +36,19 @@ public class DbSeeder implements CommandLineRunner {
                 "100",
                 "9.5",
                 "889,883",
-                "series",
                 new ArrayList<String>(Arrays.asList(
                         "https://images-na.ssl-images-amazon.com/images/M/MV5BMTgyMzI5NDc5Nl5BMl5BanBnXkFtZTgwMjM0MTI2MDE@._V1_SY1000_CR0,0,1498,1000_AL_.jpg",
                         "https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ2NDkwNDk5NV5BMl5BanBnXkFtZTgwNDM0MTI2MDE@._V1_SY1000_CR0,0,1495,1000_AL_.jpg",
                         "https://images-na.ssl-images-amazon.com/images/M/MV5BMTM4NDcyNDMzMF5BMl5BanBnXkFtZTgwOTI0MTI2MDE@._V1_SY1000_CR0,0,1495,1000_AL_.jpg",
-                        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTAzMTczMjM3NjFeQTJeQWpwZ15BbWU4MDc1MTI1MzAx._V1_SY1000_CR0,0,1495,1000_AL_.jpg",
-                        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjA5MTE3MTgwMF5BMl5BanBnXkFtZTgwOTQxMjUzMDE@._V1_SX1500_CR0,0,1500,999_AL_.jpg"
+                        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTAzMTczMjM3NjFeQTJeQWpwZ15BbWU4MDc1MTI1MzAx._V1_SY1000_CR0,0,1495,1000_AL_.jpg"
                 ))
         );
         Movie gameOfThrones = new Movie(
                 "Game of Thrones",
-                "2011-",
+                "2020",
                 "TV-MA",
                 "2011-04-17",
+                "https://media3.giphy.com/media/3oEjI1erPMTMBFmNHi/giphy.gif?cid=ecf05e47f414d80964c25f65183abdab9ba161eda6248e08&rid=giphy.gif",
                 56,
                 new ArrayList<String>(Arrays.asList("Adventure", "Drama", "Fantasy")),
                 "David Benioff",
@@ -59,13 +59,11 @@ public class DbSeeder implements CommandLineRunner {
                 "80",
                 "9.5",
                 "1,000,000",
-                "series",
                 new ArrayList<String>(Arrays.asList(
                         "https://images-na.ssl-images-amazon.com/images/M/MV5BNDc1MGUyNzItNWRkOC00MjM1LWJjNjMtZTZlYWIxMGRmYzVlXkEyXkFqcGdeQXVyMzU3MDEyNjk@._V1_SX1777_CR0,0,1777,999_AL_.jpg",
                         "https://images-na.ssl-images-amazon.com/images/M/MV5BZjZkN2M5ODgtMjQ2OC00ZjAxLWE1MjMtZDE0OTNmNGM0NWEwXkEyXkFqcGdeQXVyNjUxNzgwNTE@._V1_SX1777_CR0,0,1777,999_AL_.jpg",
                         "https://images-na.ssl-images-amazon.com/images/M/MV5BMDk4Y2Y1MDAtNGVmMC00ZTlhLTlmMmQtYjcyN2VkNzUzZjg2XkEyXkFqcGdeQXVyNjUxNzgwNTE@._V1_SX1777_CR0,0,1777,999_AL_.jpg",
-                        "https://images-na.ssl-images-amazon.com/images/M/MV5BNjZjNWIzMzQtZWZjYy00ZTkwLWJiMTYtOWRkZDBhNWJhY2JmXkEyXkFqcGdeQXVyMjk3NTUyOTc@._V1_SX1777_CR0,0,1777,999_AL_.jpg",
-                        "https://images-na.ssl-images-amazon.com/images/M/MV5BNTMyMTRjZWEtM2UxMS00ZjU5LWIxMTYtZDA5YmJhZmRjYTc4XkEyXkFqcGdeQXVyMjk3NTUyOTc@._V1_SX1777_CR0,0,1777,999_AL_.jpg"
+                        "https://images-na.ssl-images-amazon.com/images/M/MV5BNjZjNWIzMzQtZWZjYy00ZTkwLWJiMTYtOWRkZDBhNWJhY2JmXkEyXkFqcGdeQXVyMjk3NTUyOTc@._V1_SX1777_CR0,0,1777,999_AL_.jpg"
                 ))
         );
 

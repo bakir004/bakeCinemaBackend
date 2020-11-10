@@ -1,0 +1,53 @@
+/* 
+#0C0C0E - dark
+#1C1C21 - light dark
+#D9E4E8 - whit
+#8C031A - dark red
+#C80425 - darkn't red 
+*/
+
+.modal-column {
+    width: 50%;
+    padding: 0 2px;
+
+    .poster-image-div {
+        height: 100%;
+        margin-top: 15px;
+        .poster-image {
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+            border: 2px solid #C80425;
+        }
+    }
+    .poster-no-image-div {
+        height: 200px;
+        .no-image {
+            text-align: center;
+            line-height: 204px;
+            font-size: 14px;
+            color: #D9E4E8;
+        }
+    }
+    .section-header {
+        color: #D9E4E8;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .images-container {
+        display: flex;
+
+        .modal-image-div {
+            width: 100%;
+            color: #D9E4E8;
+
+            .modal-image {
+                width: 100%;
+                border-radius: 10px;
+            }
+        }
+    }
+}
+
+

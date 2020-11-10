@@ -1,0 +1,12 @@
+git stash - save changes, and remove them from code
+
+git pull - pull changes from branch
+
+git stash apply - apply latest stash
+
+
+
+
+git add .
+git commit -m "commit msg" 
+git push origin develop 

@@ -1,0 +1,114 @@
+/* 
+#0C0C0E - dark
+#1C1C21 - light dark
+#D9E4E8 - whit
+#8C031A - dark red
+#C80425 - darkn't red 
+*/
+
+.background {
+    width: 100%;
+    height: 100vh;
+    // background-image: url(https://i.pinimg.com/originals/e3/69/70/e369709a2c570997787fb22d8294f626.gif);
+    background-repeat: repeat;
+    background-size: cover;
+    z-index: -1;
+    position: absolute;
+    margin-top: -64px;
+}
+.background-overlay {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+    position: absolute;
+    margin-top: 0px;
+}
+.view-container {
+    padding-top: 128px;
+    width: 80%;
+    margin: 0 auto;
+    z-index: -1;
+    display: flex;
+}
+
+// .gradient {
+//     width: 200px;
+//     height: 200px;
+//     background-image: linear-gradient(to right, rgba(12, 12, 14, 1) , rgba(0, 0, 0, 0));
+//     position: relative;
+//     top: 0;
+//     left: 0;
+// }
+
+.column {
+    width: 49%;
+    padding: 0.5%;
+}
+
+.view-images-div {
+    width: 100%;
+}
+
+.view-image {
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 4px;
+}
+
+.info-div {
+    width: 80%;
+    margin: 30px auto;
+
+    .view-title {
+        font-size: 70px;
+        font-weight: 600;
+        margin: 5px 0 5px -6px;
+    }
+    .view-genres-div {
+
+        .view-genres {
+            font-size: 17px;
+            font-weight: 600;
+        }
+    }
+
+    .view-general-info-div {
+        font-size: 18px;
+        font-weight: 600;
+        margin: 10px 0
+    }
+    .view-plot {
+        font-size: 26px;
+        margin-top: 20px;
+    }
+    .view-director-and-writer {
+        margin: 7px 0 7px -2px;
+        font-size: 18px;
+        font-style: italic;
+    }
+    .view-actors {
+        font-size: 18px;
+        font-style: italic;
+    }
+}
+.button {
+    margin: 20px 10px 20px 0;
+    background-color: #0C0C0E;
+    width: 130px;
+    height: 35px;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid#1C1C21;
+    cursor: pointer;
+
+    .button-text {
+        letter-spacing: 0.02857em;
+        line-height: 35px;
+        font-weight: 600;
+        font-size: 0.875rem;
+    }
+}
+.buttons {
+    display: flex;
+}

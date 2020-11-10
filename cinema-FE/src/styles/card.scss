@@ -1,0 +1,40 @@
+/* 
+#0C0C0E - dark
+#1C1C21 - light dark
+#D9E4E8 - whit
+#8C031A - dark red
+#C80425 - darkn't red 
+*/
+
+.card {
+    height: 100%;
+    width: 200px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 0 10px;
+
+    .card-image-div {
+        width: 200px;
+        height: 300px;
+
+        .card-image {
+            height: 100%;
+            width: 200px;
+            object-fit: cover;
+        }
+    }
+
+    .card-title {
+        text-align: center;
+        line-height: 30px;
+        height: 30px;
+        background-color: #1C1C21;
+    }
+    &:hover {
+        transform: scale(1.2);
+        margin: 0 15px;
+    }
+}
+
+
+

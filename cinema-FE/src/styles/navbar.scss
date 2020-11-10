@@ -1,0 +1,17 @@
+/* 
+#0C0C0E - dark
+#1C1C21 - light dark
+#D9E4E8 - whit
+#8C031A - dark red
+#C80425 - darkn't red 
+*/
+
+.search-field {
+    width: 340px;
+}
+
+@media only screen and (max-width: 599px) {
+    .search-field {
+        width: 100%;
+    }
+}

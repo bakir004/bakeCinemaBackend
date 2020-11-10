@@ -1,0 +1,9 @@
+- rerenderanje homea kad se post zavrsi
+- view pojedinih moviea
+- put, delete
+- carousel sa mouse hoverom
+- login i signup
+- hover da sakrije ui na viewu
+- provjerit overflow infa na viewu
+- editanje je malo buggy
+- dodat jos gifova

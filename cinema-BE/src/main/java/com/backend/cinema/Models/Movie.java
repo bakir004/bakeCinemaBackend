@@ -21,6 +21,7 @@ public class Movie {
     public String writer;
     public List<String> actors;
     public String plot;
+    public String gif;
     //    public String awards;
     public String poster;
     public String metascore;
@@ -28,10 +29,9 @@ public class Movie {
     public String imdbRating;
     public String imdbVotes;
     //    public String imdbId;
-    public String type;
     public List<String> images;
 
-    public Movie(String title, String year, String rated, String released, int runtime, List<String> genres, String director, String writer, List<String> actors, String plot, String poster, String metascore, String imdbRating, String imdbVotes, String type, List<String> images) {
+    public Movie(String title, String year, String rated, String released, String gif, int runtime, List<String> genres, String director, String writer, List<String> actors, String plot, String poster, String metascore, String imdbRating, String imdbVotes, List<String> images) {
         this.title = title;
         this.year = year;
         this.rated = rated;
@@ -40,13 +40,13 @@ public class Movie {
         this.genres = genres;
         this.director = director;
         this.writer = writer;
+        this.gif = gif;
         this.actors = actors;
         this.plot = plot;
         this.poster = poster;
         this.metascore = metascore;
         this.imdbRating = imdbRating;
         this.imdbVotes = imdbVotes;
-        this.type = type;
         this.images = images;
     }
 
@@ -173,19 +173,19 @@ public class Movie {
         this.imdbVotes = imdbVotes;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
     public List<String> getImages() {
         return images;
     }
 
     public void setImages(List<String> images) {
         this.images = images;
+    }
+
+    public String getGif() {
+        return gif;
+    }
+
+    public void setGif(String gif) {
+        this.gif = gif;
     }
 }

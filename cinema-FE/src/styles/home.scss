@@ -1,0 +1,48 @@
+/* 
+#0C0C0E - dark
+#1C1C21 - light dark
+#D9E4E8 - whit
+#8C031A - dark red
+#C80425 - darkn't red 
+*/
+
+body {
+    background-color: #0C0C0E;
+    font-family: Montserrat;
+    color: #D9E4E8;
+    margin: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+    // height: 100%;
+}
+
+.scrollable {
+    height: 300px;
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start; 
+}
+
+.card-batch {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-card {
+    border: 2px solid #C80425;
+    margin: 0 10px;
+    width: 200px;
+    text-align: center;
+    line-height: 300px;
+    font-size: 100px;
+    color: #c80425;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+        transform: scale(1.2);
+        margin: 0 15px;
+    }
+}
