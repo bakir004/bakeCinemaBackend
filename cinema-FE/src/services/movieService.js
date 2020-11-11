@@ -8,7 +8,7 @@ export const createMovie = movie => {
 }
 
 export const editMovie = async movie => {
-    const res = (await axios.put("http://localhost:8080/movie", movie)).data
+    const res = await axios.put("http://localhost:8080/movie", movie)
     return res;
 }
 

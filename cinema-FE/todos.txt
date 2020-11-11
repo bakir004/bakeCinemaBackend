@@ -7,3 +7,4 @@
 - provjerit overflow infa na viewu
 - editanje je malo buggy
 - dodat jos gifova
+- editovanje zanrova

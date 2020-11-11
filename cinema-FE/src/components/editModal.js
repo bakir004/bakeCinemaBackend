@@ -109,6 +109,7 @@ export default function Modal(props) {
     setValues(_values)
   }
   const handleSubmit = () => {
+    console.log(values.genres)
     const movie = {
       id: props.movie.id,
       title: values.title,
@@ -128,7 +129,11 @@ export default function Modal(props) {
       imdbVotes: values.imdbvotes,
       images: [values.images[0], values.images[1], values.images[2], values.images[3]]
     }
-    editMovie(movie);
+    console.log(movie)
+    editMovie(movie)
+      .then(res => {
+        props.sendUpdatedMovie(res.data);
+      });
     setOpen(false);
     emptyValues();
     props.openSnackbar();
@@ -234,13 +239,13 @@ export default function Modal(props) {
         </div>
       </DialogContent>
       <DialogActions>
-        <Button autoFocus onClick={autofill} style={{color: "#D9E4E8", fontFamily: "Montserrat", fontWeight: "600"}}>
+        <Button onClick={autofill} style={{color: "#D9E4E8", fontFamily: "Montserrat", fontWeight: "600"}}>
           Autofill
         </Button>
-        <Button autoFocus onClick={handleClose} style={{color: "#C80425", fontFamily: "Montserrat", fontWeight: "600"}}>
+        <Button onClick={handleClose} style={{color: "#C80425", fontFamily: "Montserrat", fontWeight: "600"}}>
           Close
         </Button>
-        <Button autoFocus onClick={handleSubmit} style={{color: "#D9E4E8", fontFamily: "Montserrat", fontWeight: "600"}}>
+        <Button onClick={handleSubmit} style={{color: "#D9E4E8", fontFamily: "Montserrat", fontWeight: "600"}}>
           Submit
         </Button>
       </DialogActions>

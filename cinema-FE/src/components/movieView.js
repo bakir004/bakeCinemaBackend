@@ -6,6 +6,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import Modal from "./editModal"
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
+import SmallModal from "./smallModal"
 
 function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -14,6 +15,7 @@ function Alert(props) {
 export default function MovieView(props) {
     const [snackbarOpen, setSnackbarOpen] = useState(false);
     const [modalOpen, setModalOpen] = useState(false);
+    const [smallModalOpen, setSmallModalOpen] = useState(false);
     const [movie, setMovie] = useState({});
     const [open, setOpen] = useState(false);
 
@@ -28,23 +30,43 @@ export default function MovieView(props) {
     };
 
     useEffect(() => {
-        getAndSetMovies();
+        getAndSetMovie();
         // eslint-disable-next-line
     }, [])
 
     const openSnackbar = () => {
-        getAndSetMovies();
         setSnackbarOpen(true);
     };
 
-     const getAndSetMovies = async () => {
-       setOpen(true);
-       const res = await axios.get(
-         `http://localhost:8080/movie/${props.match.params.id}`
-       );
-       setMovie(res.data);
-       setOpen(false);
-     };
+    const getAndSetMovie = async () => {
+        setOpen(true);
+        const res = await axios.get(
+            `http://localhost:8080/movie/${props.match.params.id}`
+        );
+        setTimeout(() => {
+            if(res.data)
+            setOpen(false);
+            setMovie(res.data);
+        }, 700);
+    };
+
+    const receiveUpdatedMovie = (movie) => {
+        setOpen(true)
+        setTimeout(() => {
+            setOpen(false)
+        }, 700);
+        setMovie(movie);
+    }
+
+    const openSmallModal = () => {
+        setSmallModalOpen(!smallModalOpen)
+    }
+
+    const handleDelete = async () => {
+        // eslint-disable-next-line
+        const res = await axios.delete(`http://localhost:8080/movie/${movie.id}`).data;
+        props.history.push('/');
+    }
 
     return ( 
         <div className="background" style={{backgroundImage: `url(${movie.gif})`}}>
@@ -73,7 +95,7 @@ export default function MovieView(props) {
                         <div className="info-div">
                             <div className="view-title">{movie.title}</div>
                             <div className="view-genres-div">
-                                {movie.genres ? movie.genres.map((item, i) => {
+                                {Array.isArray(movie.genres) ? movie.genres.map((item, i) => {
                                     return <span key={i} className="view-genres">{item.toUpperCase() + (i !== movie.genres.length - 1 ? " - " : "")} </span>
                                 }) : null}
                             </div>
@@ -82,7 +104,7 @@ export default function MovieView(props) {
                             </div>
                             {movie.director ? <div className="view-director-and-writer">Directed by: {movie.director}</div> : null}
                             {movie.writer ? <div className="view-director-and-writer">Directed by: {movie.writer}</div> : null}
-                            {movie.actors ? <div className="view-actors">{movie.actors.map((item, i) => {
+                            {Array.isArray(movie.actors) ? <div className="view-actors">{movie.actors.map((item, i) => {
                                 return <span key={i}>{item + (i !== movie.actors.length - 1 ? ", " : "")} </span>
                             })}</div> : null}
                             <div className="view-plot">{movie.plot}</div>
@@ -90,7 +112,7 @@ export default function MovieView(props) {
                                 <div className="button" onClick={openModal}>
                                     <span className="button-text">EDIT</span> 
                                 </div>
-                                <div className="button" style={{color: "#C80425"}}>
+                                <div className="button" style={{color: "#C80425"}} onClick={openSmallModal}>
                                     <div className="button-text" style={{color: "#C80425"}}>DELETE</div> 
                                 </div>
                             </div>
@@ -101,12 +123,13 @@ export default function MovieView(props) {
             <Backdrop style={{zIndex: 1}} open={open}>
                 <CircularProgress style={{color: "#C80425"}} />
             </Backdrop>
-            {movie.title ? <Modal modalOpen={modalOpen} openSnackbar={openSnackbar} movie={movie}></Modal> : null}
+            {movie.title ? <Modal modalOpen={modalOpen} openSnackbar={openSnackbar} movie={movie} sendUpdatedMovie={receiveUpdatedMovie}></Modal> : null}
             <Snackbar open={snackbarOpen} autoHideDuration={6000} onClose={handleClose} anchorOrigin={{"horizontal": "left", "vertical": "bottom"}}>
                 <Alert onClose={handleClose} style={{backgroundColor: "#1C1C21", fontFamily: "Montserrat", fontWeight: "600"}}>
                     Successfully edited movie
                 </Alert>
             </Snackbar>
+            <SmallModal modalAction={handleDelete} text={`Do you want to delete ${movie.title}?`} modalOpen={smallModalOpen}></SmallModal>
         </div>
     );
 }
